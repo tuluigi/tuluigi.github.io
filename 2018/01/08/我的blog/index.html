@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="iOS," />
 
 
 
@@ -79,13 +79,19 @@
 
 
 
+<meta name="description" content="目录 引入hotfix背景 hotfix方案选型 参考1  WaxPatch(Alibaba) Dynamic Framework(Apple) React Native(Facebook)-中文网 JSPatch(Tencent)-官网 滴滴-DynamicCocoa 手Q -OCS   公开课hotfix的选型以及方案 公开课hotfix线上使用情况 总结  正文1. 引入hotfix背景 1">
+<meta name="keywords" content="iOS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="我的blog">
+<meta property="og:title" content="iOS的Hotfix方案">
 <meta property="og:url" content="http://yoursite.com/2018/01/08/我的blog/index.html">
 <meta property="og:site_name" content="Luigi">
-<meta property="og:updated_time" content="2018-01-08T01:59:28.000Z">
+<meta property="og:description" content="目录 引入hotfix背景 hotfix方案选型 参考1  WaxPatch(Alibaba) Dynamic Framework(Apple) React Native(Facebook)-中文网 JSPatch(Tencent)-官网 滴滴-DynamicCocoa 手Q -OCS   公开课hotfix的选型以及方案 公开课hotfix线上使用情况 总结  正文1. 引入hotfix背景 1">
+<meta property="og:image" content="http://blog.cnbang.net/wp-content/uploads/2015/08/JSPatchSecurity.png">
+<meta property="og:updated_time" content="2018-02-24T07:26:22.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="我的blog">
+<meta name="twitter:title" content="iOS的Hotfix方案">
+<meta name="twitter:description" content="目录 引入hotfix背景 hotfix方案选型 参考1  WaxPatch(Alibaba) Dynamic Framework(Apple) React Native(Facebook)-中文网 JSPatch(Tencent)-官网 滴滴-DynamicCocoa 手Q -OCS   公开课hotfix的选型以及方案 公开课hotfix线上使用情况 总结  正文1. 引入hotfix背景 1">
+<meta name="twitter:image" content="http://blog.cnbang.net/wp-content/uploads/2015/08/JSPatchSecurity.png">
 
 
 
@@ -121,7 +127,7 @@
 
 
 
-  <title>我的blog | Luigi</title>
+  <title>iOS的Hotfix方案 | Luigi</title>
   
 
 
@@ -245,7 +251,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">我的blog</h1>
+          <h1 class="post-title" itemprop="name headline">iOS的Hotfix方案</h1>
         
 
         <div class="post-meta">
@@ -305,7 +311,61 @@
       
 
       
-        
+        <h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ol>
+<li>引入hotfix背景</li>
+<li>hotfix方案选型<br> <a href="http://www.jianshu.com/p/6f0ae1e364d9" target="_blank" rel="noopener">参考1</a> <ol>
+<li>WaxPatch(Alibaba)</li>
+<li>Dynamic Framework(Apple)</li>
+<li>React Native(Facebook)-<a href="http://reactnative.cn" target="_blank" rel="noopener">中文网</a></li>
+<li>JSPatch(Tencent)-<a href="http://jspatch.com" target="_blank" rel="noopener">官网</a></li>
+<li>滴滴-<a href="http://mp.weixin.qq.com/s/qRW_akbU3TSd0SxpF3iQmQ" target="_blank" rel="noopener">DynamicCocoa</a></li>
+<li>手Q -<a href="http://www.open-open.com/lib/view/1483081777009" target="_blank" rel="noopener">OCS</a></li>
+</ol>
+</li>
+<li>公开课hotfix的选型以及方案</li>
+<li>公开课hotfix线上使用情况</li>
+<li>总结</li>
+</ol>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="1-引入hotfix背景"><a href="#1-引入hotfix背景" class="headerlink" title="1. 引入hotfix背景"></a>1. 引入hotfix背景</h3><pre><code> 1. iOS发版本成本高，周期长，每次发一个版本至少需要2个工作日
+2. iOS渠道单一，出现bug会造成影响扩大化
+3. 重复发版本给用户体验不好
+</code></pre><h3 id="2-hotfix方案选型"><a href="#2-hotfix方案选型" class="headerlink" title="2. hotfix方案选型"></a>2. hotfix方案选型</h3><pre><code>1. WaxPatch(Alibaba)
+2. Dynamic Framework(Apple)
+3. React Native(Facebook)
+4. JSPatch(Tencent)
+5. 滴滴[DynamicCocoa]
+6. 手Q -[QFix]
+</code></pre><h3 id="3-公开课hotfix的选型以及方案JSPatch"><a href="#3-公开课hotfix的选型以及方案JSPatch" class="headerlink" title="3. 公开课hotfix的选型以及方案JSPatch"></a>3. 公开课hotfix的选型以及方案<a href="http://jspatch.com" target="_blank" rel="noopener">JSPatch</a></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">公开课的hotfix选用的是基于开源JSPatch引擎；补丁的下发逻辑放在自己Sever</span><br></pre></td></tr></table></figure>
+<ul>
+<li><h4 id="3-0-JSPatch使用文档-基本语法"><a href="#3-0-JSPatch使用文档-基本语法" class="headerlink" title="3.0-JSPatch使用文档;基本语法"></a>3.0-JSPatch使用文档;<a href="https://github.com/bang590/JSPatch/wiki/JSPatch-基础用法" target="_blank" rel="noopener">基本语法</a></h4></li>
+<li><h4 id="3-1-使用范例"><a href="#3-1-使用范例" class="headerlink" title="3.1-使用范例"></a>3.1-使用范例</h4><p>  参考项目中<code>NEJSPatch</code>类</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> *  初始化设置appKey，appVersion</span><br><span class="line"> *</span><br><span class="line"> *  @param key        没给app申请的appKey</span><br><span class="line"> *  @param appVersion App的版本号，如果传nil或者@“”，则以NSBundle中 CFBundleShortVersionString 作为appversion</span><br><span class="line"> *  @param onLine     是否是正式环境，hotfix后台分为开发和测试环境</span><br><span class="line"> */</span><br><span class="line">+ (void)startWithAppKey:(NSString *)key appVersion:(NSString *)appVersion isOnLine:(BOOL)onLine;</span><br><span class="line">/**</span><br><span class="line"> *  启动时候调用，检测脚本更新</span><br><span class="line"> */</span><br><span class="line">+ (void)sync;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><h4 id="3-2-安全问题"><a href="#3-2-安全问题" class="headerlink" title="3.2-安全问题"></a>3.2-安全问题</h4></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">JSPatch脚本的执行权限很高，若在传输过程中被中间人篡改，</span><br><span class="line">会带来很大的安全问题，为了避免被篡改情况，我们需要做一些加密处理：</span><br><span class="line"></span><br><span class="line">Sever与APP之间接口安全问题，主要可能有以下几种方式：</span><br><span class="line">1、对称加密，秘钥放在客户端，一旦秘钥泄露影响较大</span><br><span class="line">2、HTTPS</span><br><span class="line">3、非对称加密，主要Sever不被破解，问题不大.</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">客户端目前的方案是混合的方案：</span><br><span class="line">RSA+HTTPS+AES256</span><br><span class="line">1、我们在传输过程中对JS文件进行了RSA签名加密，</span><br><span class="line">2、客户端本地存储js文件进行AES256加密；流程如下：</span><br><span class="line"></span><br><span class="line">服务端：</span><br><span class="line">1、计算 JS 文件 MD5 值。</span><br><span class="line">2、用 RSA 私钥对 MD5 值进行加密。将JS文件，公钥，加密后md5值一起下发给客户端。</span><br><span class="line"></span><br><span class="line">客户端：</span><br><span class="line">1、拿到加密数据，用 RSA 公钥解密出 MD5 值。</span><br><span class="line">2、本地计算返回的 JS 文件 MD5 值。</span><br><span class="line">3、对比上述的两个 MD5 值，若相等则校验通过，取 JS 文件进行AES256加密后保存到本地。</span><br><span class="line"></span><br><span class="line">本地存储</span><br><span class="line">1、本地存储的脚本被篡改的机会小很多，只在越狱机器上有点风险，</span><br><span class="line">2、为了保证本地存储的补丁文件不被篡改，目前本地存储时候也进行了&apos;AES256&apos;加密。</span><br><span class="line"></span><br><span class="line">利弊总结</span><br><span class="line">1、目前js文件裸奔，对外界透明，如果涉及到核心业务敏感数据可能会造成不利影响。</span><br><span class="line"></span><br><span class="line">改进地方：</span><br><span class="line">1、js文件加密，zip压缩，减少文件体积</span><br><span class="line">2、公钥最好放在客户端。由于RSA是非对称加密，在没有私钥的情况下第三方无法加密对应的 MD5 值，</span><br><span class="line">也就无法伪造 JS文件，杜绝了JS文件在传输过程被篡改的可能。</span><br><span class="line">3、Sever上传补丁后，客户端不能时时更新，需要Sever配合走杭研push长连接发消息，客户端主动监测更新。</span><br></pre></td></tr></table></figure>
+<p><img src="http://blog.cnbang.net/wp-content/uploads/2015/08/JSPatchSecurity.png" alt="image"></p>
+<ul>
+<li><h4 id="3-3-灰度下发"><a href="#3-3-灰度下发" class="headerlink" title="3.3- 灰度下发"></a>3.3- 灰度下发</h4><p>  暂时支持基本的版本号，手机系统等条件，但是目前没有使用恢复下发</p>
+</li>
+<li><h4 id="3-4-在线实时监控"><a href="#3-4-在线实时监控" class="headerlink" title="3.4- 在线实时监控"></a>3.4- 在线实时监控</h4><p>  后端没有做，暂不支持</p>
+</li>
+<li><h4 id="3-4-后台地址"><a href="#3-4-后台地址" class="headerlink" title="3.4- 后台地址"></a>3.4- 后台地址</h4><p>  3.4.1. <a href="http://test.c.open.163.com/admin/appPatch/appList.htm" target="_blank" rel="noopener">测试环境hotfix地址</a></p>
+<p>  3.4.2. 后端联系–XXX</p>
+</li>
+<li><h4 id="3-5-Object-C转js工具-JSPatchX"><a href="#3-5-Object-C转js工具-JSPatchX" class="headerlink" title="3.5- Object-C转js工具 JSPatchX"></a>3.5- Object-C转js工具 <a href="https://github.com/bang590/JSPatchX" target="_blank" rel="noopener">JSPatchX</a></h4><p>  3.5.1 JSPatchX</p>
+<p>  3.5.2 <a href="http://bang590.github.io/JSPatchConvertor/" target="_blank" rel="noopener">JSPatchConvertor</a></p>
+</li>
+<li><h4 id="3-6-客户端本地js文件异常处理"><a href="#3-6-客户端本地js文件异常处理" class="headerlink" title="3.6- 客户端本地js文件异常处理"></a>3.6- 客户端本地js文件异常处理</h4><p>  由于js文件权限较高，一旦出现以下情况，则会删除本地js文件，防止造成更大不良影响。</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1. 本地文件AES256解密失败</span><br><span class="line">2 js文件执行出现异常(可能语法错误，其他错误等)</span><br><span class="line">3 App覆盖安装升级首次打开时，会删除本地之前版本的js文件</span><br><span class="line">4 下载js文件md5校验失败，此次下载文件不存储客户端</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="4-公开课hotfix线上使用情况"><a href="#4-公开课hotfix线上使用情况" class="headerlink" title="4. 公开课hotfix线上使用情况"></a>4. 公开课hotfix线上使用情况</h3><pre><code>hotfix线上在4.7.0-4.7.2 几个版本中使用较频繁，也解决了不少线上bug，具体bug参考补丁文件.
+</code></pre><h3 id="5-总结-Q-amp-A"><a href="#5-总结-Q-amp-A" class="headerlink" title="5.总结 Q&amp;A"></a>5.总结 Q&amp;A</h3><pre><code>感谢祖国，感谢党
+</code></pre>
       
     </div>
     
@@ -320,6 +380,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/iOS/" rel="tag"># iOS</a>
+          
+        </div>
+      
 
       
       
@@ -329,7 +395,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/01/08/hello-world/" rel="next" title="hexo博客创建教程">
+              <a href="/2017/05/24/hello-world/" rel="next" title="hexo博客创建教程">
                 <i class="fa fa-chevron-left"></i> hexo博客创建教程
               </a>
             
@@ -339,8 +405,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/02/24/温故知新/" rel="prev" title="">
-                 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/02/24/温故而知新/" rel="prev" title="温故而知新">
+                温故而知新 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -373,7 +439,7 @@
   
     <div class="comments" id="comments">
       <div class="ds-thread" data-thread-key="2018/01/08/我的blog/"
-           data-title="我的blog" data-url="http://yoursite.com/2018/01/08/我的blog/">
+           data-title="iOS的Hotfix方案" data-url="http://yoursite.com/2018/01/08/我的blog/">
       </div>
     </div>
 
@@ -400,8 +466,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Übersicht
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -425,6 +500,15 @@
             
 
             
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">Tags</span>
+                
+              </div>
+            
 
           </nav>
 
@@ -443,6 +527,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#目录"><span class="nav-number">1.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正文"><span class="nav-number">2.</span> <span class="nav-text">正文</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-引入hotfix背景"><span class="nav-number">2.1.</span> <span class="nav-text">1. 引入hotfix背景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-hotfix方案选型"><span class="nav-number">2.2.</span> <span class="nav-text">2. hotfix方案选型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-公开课hotfix的选型以及方案JSPatch"><span class="nav-number">2.3.</span> <span class="nav-text">3. 公开课hotfix的选型以及方案JSPatch</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-0-JSPatch使用文档-基本语法"><span class="nav-number">2.3.1.</span> <span class="nav-text">3.0-JSPatch使用文档;基本语法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-使用范例"><span class="nav-number">2.3.2.</span> <span class="nav-text">3.1-使用范例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-安全问题"><span class="nav-number">2.3.3.</span> <span class="nav-text">3.2-安全问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-3-灰度下发"><span class="nav-number">2.3.4.</span> <span class="nav-text">3.3- 灰度下发</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-4-在线实时监控"><span class="nav-number">2.3.5.</span> <span class="nav-text">3.4- 在线实时监控</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-4-后台地址"><span class="nav-number">2.3.6.</span> <span class="nav-text">3.4- 后台地址</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-5-Object-C转js工具-JSPatchX"><span class="nav-number">2.3.7.</span> <span class="nav-text">3.5- Object-C转js工具 JSPatchX</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-6-客户端本地js文件异常处理"><span class="nav-number">2.3.8.</span> <span class="nav-text">3.6- 客户端本地js文件异常处理</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-公开课hotfix线上使用情况"><span class="nav-number">2.4.</span> <span class="nav-text">4. 公开课hotfix线上使用情况</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-总结-Q-amp-A"><span class="nav-number">2.5.</span> <span class="nav-text">5.总结 Q&amp;A</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
