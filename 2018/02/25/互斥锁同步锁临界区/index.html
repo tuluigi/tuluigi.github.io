@@ -79,16 +79,16 @@
 
 
 
-<meta name="description" content="##互斥锁，同步锁，临界区，互斥量，信号量，自旋锁  都在讲一件事：【并发】  ###基本概念  先写观点，这些词的内在逻辑如下：   核心矛盾是“竞态条件”，即多个线程同时读写某个字段。 竞态条件下多线程争抢的是“竞态资源”。 涉及读写竟态资源的代码片段叫“临界区”。 保证竟态资源安全的最朴素的一个思路就是让临界区代码“互斥”，即同一时刻最多只能有一个线程进入临界区。 最朴素的互斥手段：在进入临">
+<meta name="description" content="互斥锁，同步锁，临界区，互斥量，信号量，自旋锁 都在讲一件事：【并发】  基本概念 先写观点，这些词的内在逻辑如下：   核心矛盾是“竞态条件”，即多个线程同时读写某个字段。 竞态条件下多线程争抢的是“竞态资源”。 涉及读写竟态资源的代码片段叫“临界区”。 保证竟态资源安全的最朴素的一个思路就是让临界区代码“互斥”，即同一时刻最多只能有一个线程进入临界区。 最朴素的互斥手段：在进入临界区之前，用i">
 <meta property="og:type" content="article">
 <meta property="og:title" content="互斥锁同步锁临界区">
 <meta property="og:url" content="http://yoursite.com/2018/02/25/互斥锁同步锁临界区/index.html">
 <meta property="og:site_name" content="Luigi">
-<meta property="og:description" content="##互斥锁，同步锁，临界区，互斥量，信号量，自旋锁  都在讲一件事：【并发】  ###基本概念  先写观点，这些词的内在逻辑如下：   核心矛盾是“竞态条件”，即多个线程同时读写某个字段。 竞态条件下多线程争抢的是“竞态资源”。 涉及读写竟态资源的代码片段叫“临界区”。 保证竟态资源安全的最朴素的一个思路就是让临界区代码“互斥”，即同一时刻最多只能有一个线程进入临界区。 最朴素的互斥手段：在进入临">
-<meta property="og:updated_time" content="2018-02-25T08:59:59.000Z">
+<meta property="og:description" content="互斥锁，同步锁，临界区，互斥量，信号量，自旋锁 都在讲一件事：【并发】  基本概念 先写观点，这些词的内在逻辑如下：   核心矛盾是“竞态条件”，即多个线程同时读写某个字段。 竞态条件下多线程争抢的是“竞态资源”。 涉及读写竟态资源的代码片段叫“临界区”。 保证竟态资源安全的最朴素的一个思路就是让临界区代码“互斥”，即同一时刻最多只能有一个线程进入临界区。 最朴素的互斥手段：在进入临界区之前，用i">
+<meta property="og:updated_time" content="2018-02-25T09:02:51.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="互斥锁同步锁临界区">
-<meta name="twitter:description" content="##互斥锁，同步锁，临界区，互斥量，信号量，自旋锁  都在讲一件事：【并发】  ###基本概念  先写观点，这些词的内在逻辑如下：   核心矛盾是“竞态条件”，即多个线程同时读写某个字段。 竞态条件下多线程争抢的是“竞态资源”。 涉及读写竟态资源的代码片段叫“临界区”。 保证竟态资源安全的最朴素的一个思路就是让临界区代码“互斥”，即同一时刻最多只能有一个线程进入临界区。 最朴素的互斥手段：在进入临">
+<meta name="twitter:description" content="互斥锁，同步锁，临界区，互斥量，信号量，自旋锁 都在讲一件事：【并发】  基本概念 先写观点，这些词的内在逻辑如下：   核心矛盾是“竞态条件”，即多个线程同时读写某个字段。 竞态条件下多线程争抢的是“竞态资源”。 涉及读写竟态资源的代码片段叫“临界区”。 保证竟态资源安全的最朴素的一个思路就是让临界区代码“互斥”，即同一时刻最多只能有一个线程进入临界区。 最朴素的互斥手段：在进入临界区之前，用i">
 
 
 
@@ -184,7 +184,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            Home
           </a>
         </li>
       
@@ -194,7 +194,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            Archives
           </a>
         </li>
       
@@ -258,7 +258,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-25T16:55:32+08:00">
                 2018-02-25
@@ -308,12 +308,10 @@
       
 
       
-        <p>##互斥锁，同步锁，临界区，互斥量，信号量，自旋锁</p>
-<blockquote>
+        <h2 id="互斥锁，同步锁，临界区，互斥量，信号量，自旋锁"><a href="#互斥锁，同步锁，临界区，互斥量，信号量，自旋锁" class="headerlink" title="互斥锁，同步锁，临界区，互斥量，信号量，自旋锁"></a>互斥锁，同步锁，临界区，互斥量，信号量，自旋锁</h2><blockquote>
 <p>都在讲一件事：【并发】</p>
 </blockquote>
-<p>###基本概念</p>
-<blockquote>
+<h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><blockquote>
 <p>先写观点，这些词的内在逻辑如下：</p>
 </blockquote>
 <ul>
@@ -437,10 +435,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Inhaltsverzeichnis
+            Table of Contents
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Übersicht
+            Overview
           </li>
         </ul>
       
@@ -461,7 +459,7 @@
                 <a href="/archives/">
               
                   <span class="site-state-item-count">4</span>
-                  <span class="site-state-item-name">Artikel</span>
+                  <span class="site-state-item-name">posts</span>
                 </a>
               </div>
             
@@ -474,7 +472,7 @@
               <div class="site-state-item site-state-tags">
                 
                   <span class="site-state-item-count">1</span>
-                  <span class="site-state-item-name">Tags</span>
+                  <span class="site-state-item-name">tags</span>
                 
               </div>
             
@@ -506,7 +504,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#互斥锁"><span class="nav-number">1.</span> <span class="nav-text">互斥锁</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#信号量"><span class="nav-number">2.</span> <span class="nav-text">信号量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#自旋锁"><span class="nav-number">3.</span> <span class="nav-text">自旋锁</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#区别"><span class="nav-number">4.</span> <span class="nav-text">区别</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#相同点"><span class="nav-number">4.1.</span> <span class="nav-text">相同点:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#不同点"><span class="nav-number">4.2.</span> <span class="nav-text">不同点:</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#互斥锁，同步锁，临界区，互斥量，信号量，自旋锁"><span class="nav-number">1.</span> <span class="nav-text">互斥锁，同步锁，临界区，互斥量，信号量，自旋锁</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本概念"><span class="nav-number">1.1.</span> <span class="nav-text">基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#互斥锁"><span class="nav-number">1.1.1.</span> <span class="nav-text">互斥锁</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#信号量"><span class="nav-number">1.1.2.</span> <span class="nav-text">信号量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#自旋锁"><span class="nav-number">1.1.3.</span> <span class="nav-text">自旋锁</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#区别"><span class="nav-number">1.1.4.</span> <span class="nav-text">区别</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#相同点"><span class="nav-number">1.1.4.1.</span> <span class="nav-text">相同点:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#不同点"><span class="nav-number">1.1.4.2.</span> <span class="nav-text">不同点:</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -536,7 +534,7 @@
 </div>
 
 
-  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
 
 
 
